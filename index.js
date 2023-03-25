@@ -4,8 +4,10 @@ const app = express();
 const conenctDB = require('./config/dbConnection');
 const port = process.env.PORT || 3000;
 app.use(express.json());
+app.use('/', (req,res) =>{
+    res.json({message:'Hello from prajwal'});
+})
 app.use('/api/v1/dashboard', require('./routes/dashboard/dashboard.routes'));
-
 app.listen(port, ()=>{
     conenctDB();
     console.log(`Server running on port ${port}`);
