@@ -2,8 +2,8 @@ const asyncHandler = require("express-async-handler");
 const Test = require('../../models/dashboard/test.model');
 
 const getdashoboardInfo = asyncHandler(async(req,res)=>{
-    // const test = await Test.find({});
-    res.status(200).json({message:'this is the get requirest'})
+    const test = await Test.find({});
+    res.status(200).json(test)
 });
 
 const postdashoboardInfo = asyncHandler(async(req,res)=>{
